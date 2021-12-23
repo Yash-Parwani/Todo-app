@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assests/css/stylesheets.css">
+</head>
+<body>
+    <h1>Karyakaal</h1>
+    <div class = "main-inputs">
+        <form action="/create-task">
+            <div id="description-div">
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description" placeholder="What do you need to do?">
+            </div>
+            <div class="sub-inputs">
+                <div id="sub-input-1">
+                <label for="taskcategory">Task Category</label>
+                <select name="taskcategory" id="taskcategory">
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="school">School</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="Other">Other</option>
+                </select>
+                </div>
+                <div id="sub-input-2">
+                <label for="duedate">Due Date</label>
+                <input type="date" name="duedate" id="duedate">
+                </div>
+                
+                
+            </div>
+            <div class="buttons">
+                <button type="submit">Add Task</button>
+                <button type="submit">Delete Task</button>
+            </div>
+        </form>
+    </div>
+    <div class="display-area">
+        <ul>
+            <li>
+                <input type="checkbox" name="falana" id="dimkana">
+                <h3>Text</h3>
+            </li>
+            <li>
+                <input type="checkbox" name="falana1" id="dimkana1">
+                <h3>Text1</h3>
+            </li>
+        </ul>
+
+    </div>
+    <script src="/assests/js/script.js"></script>
+</body>
+</html>

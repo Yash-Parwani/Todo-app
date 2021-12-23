@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/stylesheets.css">
+    <script src="https://kit.fontawesome.com/53122cc231.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="full-display">
+
+        <div class="main-inputs card">
+            <h1>Create Task</h1>
+            <form action="/task/create" method="post" id="display-form">
+                <div id="description-div">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" placeholder="What do you need to do?"
+                        required>
+
+                </div>
+                <div class="sub-inputs">
+                    <div id="sub-input1">
+                        <label for="taskcategory">Task Category</label>
+                        <select name="taskcategory" id="taskcategory" required>
+                            <option value="work">Work</option>
+                            <option value="personal">Personal</option>
+                            <option value="school">School</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                    </div>
+
+                    <div id="sub-input2"> <label for="duedate">Due Date</label>
+                        <input type="date" name="duedate" id="duedate" required>
+                    </div>
+
+
+
+                </div>
+                <div class="buttons">
+                    <button type="submit">Add Task</button>
+                </div>
+            </form>
+        </div>
+        <div id="task-display-section" class="card">
+            <div id="task-display-header">
+                <i class="fas fa-tasks fa-2x fa-center"></i>
+                <% if (ftask_list.length==0) { %>
+                    <h1 id="header-task">ToDo</h1>
+                    <%} else { %>
+                        <h1 id="header-task">ToDo....</h1>
+                        <img id="meme1" src="Images/97a0cab3.jpg" alt="meme">
+                        <% } %>
+
+
+            </div>
+            <form action="/task/delete" method="post" id="task-display">
+
+                <% for(let i of task_list){%>
+                    <% if(i.status==false){%>
+                        <div class="task-list">
+                            <div class="task-layout">
+                                <div class="checkbox">
+                                    <input type="checkbox" name="check" value="<%=i._id%>" id="<%=i._id%>">
+                                </div>
+                                <label for="<%=i._id%>"
+                                    style="display: flex; justify-content: space-evenly; width: 390px;">
+
+                                    <div class="task-display1 ">
+                                        <h3>
+                                            <%= i.description %>
+                                        </h3>
+                                        <i class="fas fa-calendar-week">
+                                            <h4 class="duedate">
+                                                <%= i.duedate %>
+                                            </h4>
+                                        </i>
+                                    </div>
+
+                                    <div class="task-display2">
+                                        <button class="task-button" type="button">
+                                            <h4>
+                                                <%= i.taskcategory%>
+                                            </h4>
+                                        </button>
+
+                                    </div>
+
+
+
+                                </label>
+
+
+                            </div>
+
+                        </div>
+                        <% } %>
+                            <%}%>
+                                <div class="buttons" style="margin-top: 3vh;">
+                                    <button type="submit" formaction="/task/complete">Task Completed</button>
+                                    <button type="submit">Delete Task</button>
+                                </div>
+
+            </form>
+        </div>
+
+    </div>
+    <aside>
+        <div class="all-task card">
+            <div class="all-tasks-header">
+                <h1 style="text-align: center;">Timeline</h1>
+            </div>
+
+            <% for(let i of task_list){%>
+                <div class="all-tasks-body">
+                    <div class="all-tasks-body1">
+                        <h3>
+                            <%= i.description%>
+                        </h3>
+                        <h4>
+                            <%= i.duedate%>
+                        </h4>
+                        <% if ( i.status==true ) { %>
+                            <div class="status">
+                                <h3>Status : Complete </h3>
+                                <img class="meme-icon1" src="Images/task-complete-final.jpg" alt="meme">
+                            </div>
+                            <%} else { %>
+                                <div class="status">
+                                    <h3> Status : ToDo...... </h3>
+                                    <img class="meme-icon2" src="Images/97a0cab3.jpg" alt="meme">
+                                </div>
+
+                                <% } %>
+
+                                    <h4>Completed on : <%= i.updatedAt%>
+                                    </h4>
+
+
+                    </div>
+                    <div class="all-tasks-body2">
+                        <button class="task-button" type="button">
+                            <h4>
+                                <%= i.taskcategory%>
+                            </h4>
+                        </button>
+
+                    </div>
+                </div>
+                <%}%>
+
+
+        </div>
+    </aside>
+
+    <script src="../assests/js/script.js" rel="text/javascript"></script>
+</body>
+
+</html>

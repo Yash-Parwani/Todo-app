@@ -1,0 +1,207 @@
+
+html{/* defining css variables */
+    --task-width:50vw;
+    --task-height:7vh;
+    --display-style:flex;
+    --color : white;
+    --side-margin:5%;
+    height : auto;
+}
+/* common flex display for flex-direction column*/
+#description-div,.main-inputs,#sub-input-1,#sub-input-2,form,#task-display-section,.fa-center,.task-button,.body-display,.full-display,.task-list,.task-display1{
+    display: var(--display-style);
+    flex-direction: column;
+}
+/* common flex display for flex-direction row */
+body,.display-area,.buttons,.sub-inputs,.task-display-main,.task-display2,#task-display-header,.all-tasks-body,.checkbox,.task-layout,.status{
+    display: var(--display-style);
+}
+/* setting some common styles for our whole page */
+body{
+    margin:3%;
+    height: auto;
+    display: flex;
+    color: var(--color);
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+
+}
+/* tweaking styles for all displays and also for cards */
+.task-display{
+    justify-content: space-between;
+}
+.full-display{
+    
+    height: 88vh;
+}
+.all-task{
+    width: 40vw;
+}
+.all-tasks-body{
+    justify-content: space-between;
+}
+.card{
+    background: linear-gradient(to top, #2a2a2a, #1a1a1a);
+    border-radius: 15px;
+    padding: 4.5%}
+ /*setting styles for inputs  */
+    select option{
+        background: rgba(26, 26, 26,0.8);
+    }
+    input,select{
+    --task-width:13.4vw;
+    background: inherit;
+    border: 0px;
+    color:var(--color);
+    margin:1%;
+    width:var(--task-width)
+}
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+::placeholder { 
+    color: var(--color);
+    opacity: 1; 
+  }
+  
+#description-div{
+    height:var(--task-height);
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border-radius: 15px;
+}
+#description-div label{
+    margin-bottom: .5%;
+    margin-left: 1.1%;
+}
+.main-inputs{
+    --task-width : 450px;
+    height:320px;
+    width:var(--task-width);
+    justify-content: space-evenly;
+    align-items: center;
+}
+#display-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.sub-inputs{
+    height:var(--task-height);
+    width: var(--task-width);
+    margin-left:1%;
+    justify-content: space-between;
+    align-items: center;
+}
+.display-area{
+    width:var(--task-width);
+    justify-content: center;
+}
+/* styles for buttons */
+.buttons{
+    justify-content: center;
+    border-radius: 15px;
+}
+.buttons button{
+       margin-left:3% ;
+       margin-right: 3%;
+}
+ul li{
+    list-style-type: none;
+}
+/* memes styling */
+#meme1{
+    margin-left:var(--side-margin);
+    margin-left: 1%;
+    height: 90px;
+    width: 140px;
+}
+#meme2{
+    margin-left:var(--side-margin);
+    height: 100px;
+    width: 160px;
+ 
+}
+.meme-icon1{
+    margin-left:var(--side-margin);
+    height:80px;
+    width: 75px;
+}
+.meme-icon2{
+    
+    margin-left:var(--side-margin);
+    height:90px;
+    width: 150px;
+}
+
+#header-task{
+    margin-top: 10.5%;
+}
+.status{
+    align-items: center;
+}
+/* display area styling */
+#task-display-section{
+    --task-width: 450px;
+    margin-top: 10%;
+    justify-content: space-evenly;
+    align-items: center;
+    width: var(--task-width);
+    height: auto;
+}
+
+#task-display{
+    width: var(--task-width);
+    margin: 0px;
+}
+.task-display2{
+    align-items:center ;
+}
+
+.task-layout{
+    justify-content: space-evenly;
+    align-items: center;
+    margin:0px;
+}
+.task-display-main{
+    width:90%;
+    justify-content: space-evenly;
+}
+.checkbox input{
+    width:6vw;
+}
+i h4{
+    display: inline;
+}
+/* font awesome styling */
+
+.fa-center{
+    margin-top: 11.5%;
+    margin-right: 5%;
+    justify-content: center;
+    align-items: center;
+}
+.task-button{
+    --color: black;
+    color: var(--color);
+    border:0px;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF  51%, #ECE9E6  100%);
+    border-radius: 15px;
+    height:40px;
+    width:100px;
+    
+    
+}
+
+input[type ="checkbox"]:checked + h3{
+    text-decoration: line-through;
+}
+
+.task-button:hover{
+    box-shadow: 0 0 20px #eee;
+}
+
+
